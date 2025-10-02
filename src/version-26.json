@@ -1,0 +1,252 @@
+{
+  "version": "26",
+  "appName": "Zhevents",
+  "description": "College event management application with event listings, registration, results, and organizer dashboard",
+  "designSpecs": {
+    "mobileFirst": true,
+    "frameSize": "360x800",
+    "responsive": true
+  },
+  "screens": [
+    "home",
+    "detail_pandu",
+    "detail_kaiso", 
+    "detail_maker",
+    "detail_aitran",
+    "detail_saman",
+    "detail_sund",
+    "register",
+    "results",
+    "org_dashboard",
+    "add_event",
+    "my_org",
+    "participants",
+    "my_part",
+    "profile"
+  ],
+  "components": [
+    {
+      "name": "Home",
+      "path": "/components/Home.tsx",
+      "description": "Main landing page with event listings, advanced fuzzy search, and natural language date parsing",
+      "features": [
+        "Advanced fuzzy search functionality",
+        "Natural language date parsing",
+        "Mobile-first frame design (360x800px)",
+        "Clean grid layout",
+        "Event filtering",
+        "Real-time search"
+      ]
+    },
+    {
+      "name": "EventDetail", 
+      "path": "/components/EventDetail.tsx",
+      "description": "Detailed view of individual events with registration and results access",
+      "features": [
+        "Centered college name and event hierarchy",
+        "Event information display",
+        "Registration button",
+        "Results access",
+        "Event rules display"
+      ]
+    },
+    {
+      "name": "Register",
+      "path": "/components/Register.tsx", 
+      "description": "Event registration form for participants"
+    },
+    {
+      "name": "Results",
+      "path": "/components/Results.tsx",
+      "description": "Live results display for events"
+    },
+    {
+      "name": "OrgDashboard",
+      "path": "/components/OrgDashboard.tsx",
+      "description": "Organizer dashboard for event management"
+    },
+    {
+      "name": "AddEvent",
+      "path": "/components/AddEvent.tsx",
+      "description": "Form for organizers to add new events"
+    },
+    {
+      "name": "MyOrganisedEvents",
+      "path": "/components/MyOrganisedEvents.tsx",
+      "description": "List of events organized by current user"
+    },
+    {
+      "name": "Participants",
+      "path": "/components/Participants.tsx",
+      "description": "Participant management for organizers"
+    },
+    {
+      "name": "MyParticipatingEvents", 
+      "path": "/components/MyParticipatingEvents.tsx",
+      "description": "List of events user is participating in"
+    },
+    {
+      "name": "Profile",
+      "path": "/components/Profile.tsx",
+      "description": "User profile management"
+    }
+  ],
+  "events": [
+    {
+      "id": "pandu",
+      "college": "Pandurang College",
+      "eventName": "Pandu Fest",
+      "location": "Mumbai, Vile Parle",
+      "dates": "25th to 26th Nov 25",
+      "type": "Mixed",
+      "competition": "Intra‑Collegiate",
+      "color": "bg-green-200",
+      "address": "89th Road, Near Aar Centre, Vile Parle, Mumbai 400054",
+      "contact": "Akhat • 9834672322",
+      "entryFees": "Free",
+      "deadline": "24 Nov (or till slots are available)",
+      "otse": "Yes (Subject to availability)",
+      "events": [
+        {
+          "name": "Event 1",
+          "type": "Dancing",
+          "competition": "Inter‑Collegiate", 
+          "groupType": "Group",
+          "date": "25 Nov 2025",
+          "time": "10am",
+          "participants": "6–8",
+          "rules": ["Rule 1", "Rule 2", "Rule 3", "Rule 4", "Rule 5"]
+        }
+      ]
+    },
+    {
+      "id": "kaiso",
+      "college": "Sindhu College",
+      "eventName": "Kaiso", 
+      "location": "Mumbai, Mira Road",
+      "dates": "24th to 26th Oct 25",
+      "type": "Mixed",
+      "competition": "Inter‑Collegiate",
+      "color": "bg-yellow-200"
+    },
+    {
+      "id": "maker",
+      "college": "ABV College",
+      "eventName": "Maker",
+      "location": "Mumbai, Ghatkopar", 
+      "dates": "25th to 26th Oct 25",
+      "type": "Mixed",
+      "competition": "Inter‑Collegiate",
+      "color": "bg-orange-300"
+    },
+    {
+      "id": "aitran",
+      "college": "Newbei College",
+      "eventName": "Aitran",
+      "location": "Mumbai, Charni Road",
+      "dates": "28th to 29th Oct 25",
+      "type": "Singing", 
+      "competition": "Intra‑Collegiate",
+      "color": "bg-amber-200"
+    },
+    {
+      "id": "saman",
+      "college": "Sanghi College",
+      "eventName": "Saman",
+      "location": "Mumbai, Jogeshwari",
+      "dates": "24th to 24th May 25",
+      "type": "Sports",
+      "competition": "Intra‑Collegiate", 
+      "color": "bg-green-300"
+    },
+    {
+      "id": "sund",
+      "college": "Sund College",
+      "eventName": "Sund Fest",
+      "location": "Mumbai",
+      "dates": "27th to 28th May 25",
+      "type": "Dramatics",
+      "competition": "Inter‑Collegiate",
+      "color": "bg-purple-300"
+    }
+  ],
+  "collegeColors": {
+    "Pandurang College": "bg-green-200",
+    "Sindhu College": "bg-yellow-200", 
+    "ABV College": "bg-orange-300",
+    "Newbei College": "bg-amber-200",
+    "Sanghi College": "bg-green-300",
+    "Sund College": "bg-purple-300"
+  },
+  "navigation": {
+    "defaultScreen": "home",
+    "routing": "client-side",
+    "stateManagement": "React useState"
+  },
+  "features": {
+    "searchFunctionality": {
+      "type": "Advanced fuzzy search",
+      "capabilities": [
+        "Text matching with edit distance",
+        "Natural language date parsing", 
+        "Real-time filtering",
+        "Multi-token search",
+        "College/event/city/type filtering"
+      ]
+    },
+    "dateHandling": {
+      "formats": ["DD/MM/YY", "natural language", "DD MMM YYYY"],
+      "parsing": "Locale-aware",
+      "display": "Friendly range format"
+    },
+    "mobileFirst": {
+      "frameWidth": "360px",
+      "frameHeight": "800px", 
+      "scrollBehavior": "Mobile-like (hidden scrollbars)",
+      "touchOptimized": true
+    }
+  },
+  "styling": {
+    "framework": "Tailwind CSS v4",
+    "designSystem": "Custom tokens",
+    "colorScheme": "Light/Dark mode support",
+    "typography": {
+      "baseFontSize": "14px",
+      "fontWeights": {
+        "normal": 400,
+        "medium": 500
+      }
+    }
+  },
+  "dependencies": {
+    "react": "Latest",
+    "tailwindcss": "v4.0",
+    "shadcn/ui": "Complete component library"
+  },
+  "fileStructure": {
+    "entrypoint": "/App.tsx",
+    "components": "/components/",
+    "ui": "/components/ui/",
+    "styles": "/styles/globals.css",
+    "guidelines": "/guidelines/Guidelines.md"
+  },
+  "completedFeatures": [
+    "Home page with advanced search",
+    "Event detail pages", 
+    "Navigation system",
+    "Mobile-first responsive design",
+    "Event data structure",
+    "Component architecture",
+    "Routing implementation",
+    "Search functionality",
+    "Date parsing",
+    "College color coding"
+  ],
+  "architecture": {
+    "pattern": "Component-based React",
+    "stateManagement": "Local state with useState",
+    "routing": "Screen-based navigation",
+    "dataFlow": "Props drilling",
+    "styling": "Utility-first CSS"
+  }
+}
